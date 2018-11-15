@@ -27,15 +27,18 @@ $(function() {
           });
         else if(ns=="image") {
           var src = [];
-          owl.find(".owl-stage .owl-item").each(function () {if(!$(this).hasClass("cloned"))src.push($(this).find("img").attr("src"));});
+          owl.find(".owl-stage .owl-item").each(function () {
+            if(!$(this).hasClass("cloned"))
+              src.push($(this).find("img").attr("src"));
+          });
           var dotL = owl.find(".owl-dot").length;
           owl.find(".owl-dot").each(function (i) {
             $(this).attr("style","width:"+(100/dotL)+"%;");
             d = document.createElement('img');
             $(d).attr("src",src[i]);
             $(d).attr("style","max-width:100%");
-            if(dotS) $(this).find("span").attr(dotS);
-            $(this).find("span").html(d);
+            if(dotS) $(this).attr(dotS);
+            $(this).html(d);
           });
         }else;
       }
