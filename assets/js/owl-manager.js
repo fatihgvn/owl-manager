@@ -11,6 +11,7 @@ $(function() {
       var s = owldata(this,"settings");
       var ns = owldata(this,"dots");
       var dotS = owldata(this,"dotsStyle");
+      var dotC = owldata(this,"dotsClass");
       if(s==undefined) s = ds;// setings yoksa default ayarları çek
       var obj = $.parseJSON("{"+s+"}");
       var owl = $(this);
@@ -38,6 +39,7 @@ $(function() {
             $(d).attr("src",src[i]);
             $(d).attr("style","max-width:100%");
             if(dotS) $(this).attr(dotS);
+            if(dotC) $(this).addClass(dotC);
             $(this).html(d);
           });
         }else;
